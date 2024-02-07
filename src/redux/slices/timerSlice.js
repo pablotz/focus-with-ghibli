@@ -4,7 +4,7 @@ const initialState = {
   isActive: false,
   minutes: 0,
   seconds: 0,
-  selectedMinutes: 25
+  selectedMinutes: 10
 }
 
 export const timerSlice = createSlice ({
