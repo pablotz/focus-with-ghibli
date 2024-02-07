@@ -1,26 +1,13 @@
-#background {
-    transition: background 0.5s ease-in-out;
+.background {
     height: 100%;
     width: 100%;
     z-index: -1;
     background-size: cover;
     position:fixed;
-    -webkit-transition: 0.7s -webkit-filter linear;
-    -o-transition: 0.7s -o-filter linear;
-}
-
-.ghibli-background-idle {
-    -webkit-filter: blur(10px); 
-    -moz-filter: blur(10px);
-    -o-filter: blur(10px); 
-    -ms-filter: blur(10px); 
-    filter: blur(10px);  
-}
-
-.ghibli-background-start { 
-    -webkit-filter: blur(0px); 
-    -moz-filter: blur(0px); 
-    -o-filter: blur(0px); 
-    -ms-filter: blur(0px);
-    filter: blur(0px); 
+    filter: blur(10px);
+    transition: background 0.7s ease-in-out, filter 1.5s ease-in-out;
 } 
+
+.background.ghibli-background-start { 
+    filter: blur(0);
+}

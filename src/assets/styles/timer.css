@@ -1,15 +1,19 @@
+:root {
+    --text-shadow: #d6bd69;
+  }
+
 .timer-container {
-    transition: 0.7s ease-in;    
-    animation-delay: 2s;
+    transition: 0.7s ease-in-out;    
 }
 
 .timer-counter {
     color: beige;
-    transition: 1s ease-in;
+    transition: 0.5s ease-in-out;
+    text-shadow: 0 0 1em var(--text-shadow), 0 0 0.2em var(--text-shadow);
 }
 
 #start-timer {
-    transform:  translateY(20em);
+    transform:  translateY(28em);
 }
 
 #idle-timer {

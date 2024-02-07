@@ -40,7 +40,7 @@ const Timer = () => {
     }, [isActive, selectedMinutes]);
 
   return (
-    <div id={isActive ? "start-timer" : "idle-timer"}   className='timer-container h-screen flex items-center justify-center'>
+    <div id={isActive ? "start-timer" : "idle-timer"}   className='timer-container pt-80 flex items-center justify-center'>
         <div>
             <div>
                 <h1

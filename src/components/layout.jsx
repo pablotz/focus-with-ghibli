@@ -19,7 +19,7 @@ const Layout = ({Component}) => {
 
   return (
     <div>
-        <div id='background' className={isActive ? 'ghibli-background-start': 'ghibli-background-idle'} style={{ backgroundImage: `url(${background})`}}>
+        <div className={`background ${isActive ? 'ghibli-background-start': ''}`} style={{ backgroundImage: `url(${background})`}}>
         </div>
         <Component />
     </div>
