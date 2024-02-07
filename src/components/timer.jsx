@@ -11,7 +11,7 @@ const Timer = () => {
         if(isActive) {
             timerWork()
         }
-    }, [isActive, selectedMinutes]);
+    }, [isActive]);
 
   return (
     <div className={`${isActive ? "start-timer pt-80" : "idle-timer pt-96"} timer-container  flex items-center   justify-center`}>

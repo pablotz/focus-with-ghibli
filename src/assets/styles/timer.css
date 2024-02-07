@@ -12,12 +12,12 @@
     text-shadow: 0 0 1em var(--text-shadow), 0 0 0.2em var(--text-shadow);
 }
 
-#start-timer {
-    transform:  translateY(28em);
+.start-timer {
+    transform:  translate(-50em, 28em);
 }
 
-#idle-timer {
-    transform:  translateY(0);
+.idle-timer {
+    transform:  translate(0);
 }
 
 
