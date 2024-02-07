@@ -1,0 +1,26 @@
+.timer-container {
+    transition: 0.7s ease-in;    
+    animation-delay: 2s;
+}
+
+.timer-counter {
+    color: beige;
+    transition: 1s ease-in;
+}
+
+#start-timer {
+    transform:  translateY(20em);
+}
+
+#idle-timer {
+    transform:  translateY(0);
+}
+
+
+#timer-sleep {
+    font-size: 10em;
+}
+
+#timer-started {
+    font-size: 5em;
+}
