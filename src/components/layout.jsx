@@ -2,6 +2,7 @@
 import {useState, useEffect} from 'react'
 import { getRandomImage } from '../utils/setBackground';
 import '../assets/styles/layout.css'
+import { useSelector } from 'react-redux';
 
 const Layout = ({Component}) => {
     
@@ -13,10 +14,12 @@ const Layout = ({Component}) => {
         return () => clearInterval(interval);
     }, []);
 
+    const { isActive } = useSelector(state => state.timer);
+
 
   return (
     <div>
-        <div className='ghibli-background' style={{ backgroundImage: `url(${background})`}}>
+        <div id='background' className={isActive ? 'ghibli-background-start': 'ghibli-background-idle'} style={{ backgroundImage: `url(${background})`}}>
         </div>
         <Component />
     </div>
