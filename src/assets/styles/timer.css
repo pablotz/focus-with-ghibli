@@ -28,3 +28,12 @@
 #timer-started {
     font-size: 5em;
 }
+
+.slider-container { 
+    margin: 0 47em;
+    margin-top: 2em;
+}
+
+.control-container {
+    transition: 0.7s ease-in-out;    
+}

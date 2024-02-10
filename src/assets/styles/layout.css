@@ -4,7 +4,7 @@
     z-index: -1;
     background-size: cover;
     position:fixed;
-    filter: blur(10px);
+    filter: blur(8px);
     transition: background 0.7s ease-in-out, filter 1.5s ease-in-out;
 } 
 
