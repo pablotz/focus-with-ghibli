@@ -1,4 +1,4 @@
-import { setMinutes, setSeconds, toggleActive } from "../redux/slices/timerSlice";
+import { setMinutes, setSeconds, setSelectedMinutes, toggleActive } from "../redux/slices/timerSlice";
 import { store } from "../redux/store";
 
 let { dispatch, getState } = store;

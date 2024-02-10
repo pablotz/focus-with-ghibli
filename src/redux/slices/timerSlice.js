@@ -16,7 +16,7 @@ export const timerSlice = createSlice ({
       console.log(state.isActive)
     },
     setSelectedMinutes: (state, action) => {
-      state.minutes = action.payload
+      state.selectedMinutes = action.payload
     },
     setMinutes: (state, action) => {
       state.minutes = action.payload
