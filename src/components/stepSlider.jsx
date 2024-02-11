@@ -2,7 +2,6 @@ import { styled } from '@mui/material';
 import Slider from '@mui/material/Slider';
 import { useDispatch, useSelector } from 'react-redux';
 import { setSelectedMinutes } from '../redux/slices/timerSlice';
-import { useEffect, useState } from 'react';
 
 
 const PrettoSlider = styled(Slider)({
