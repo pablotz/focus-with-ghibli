@@ -4,7 +4,7 @@ import Focus from "./focus"
 function App() {
 
   return (
-      <Layout Component={Focus} />
+      <Layout />
   )
 }
 

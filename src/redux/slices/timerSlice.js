@@ -13,7 +13,6 @@ export const timerSlice = createSlice ({
   reducers: {
     toggleActive: (state) => {
       state.isActive = !state.isActive
-      console.log(state.isActive)
     },
     setSelectedMinutes: (state, action) => {
       state.selectedMinutes = action.payload

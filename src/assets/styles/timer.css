@@ -13,7 +13,7 @@
 }
 
 .start-timer {
-    transform:  translate(-50em, 28em);
+    transform:  translate(0, 28em);
 }
 
 .idle-timer {
