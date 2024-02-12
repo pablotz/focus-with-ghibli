@@ -1,5 +1,4 @@
-import Layout from "./components/Layout"
-import Focus from "./focus"
+import Layout from "./components/Layout.jsx"
 
 function App() {
 

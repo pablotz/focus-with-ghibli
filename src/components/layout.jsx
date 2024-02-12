@@ -4,7 +4,7 @@ import { getRandomImage } from '../utils/setBackground';
 import '../assets/styles/layout.css'
 import { useSelector } from 'react-redux';
 import Focus from '../focus';
-import YoutubeEmbedded from './youtubeEmbedded';
+import YoutubeEmbedded from './YoutubeEmbedded';
 
 const Layout = () => {
     

@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
-import Timer from './components/timer'
-import ControlTimer from './components/controlTimer.jsx';
-import StepSlider from './components/stepSlider.jsx';
+import Timer from './components/Timer.jsx'
+import ControlTimer from './components/ControlTimer.jsx';
+import StepSlider from './components/StepSlider.jsx';
 import './assets/styles/timer.css'
 
 const Focus = () => {
