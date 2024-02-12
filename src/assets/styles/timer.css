@@ -1,19 +1,16 @@
-:root {
-    --text-shadow: #d6bd69;
-  }
-
 .timer-container {
+    padding-top: 30vh;
     transition: 0.7s ease-in-out;    
 }
 
 .timer-counter {
     color: beige;
     transition: 0.5s ease-in-out;
-    text-shadow: 0 0 1em var(--text-shadow), 0 0 0.2em var(--text-shadow);
+    text-shadow: 0 0 1em #d6bd69, 0 0 0.2em #d6bd69;
 }
 
 .start-timer {
-    transform:  translate(0, 28em);
+    transform:  translate(0, 50vh);
 }
 
 .idle-timer {
@@ -22,18 +19,43 @@
 
 
 #timer-sleep {
-    font-size: 10em;
+    font-size: 17vh;
 }
 
 #timer-started {
-    font-size: 5em;
+    font-size: 7vh;
 }
 
 .slider-container { 
-    margin: 0 47em;
-    margin-top: -2em;
+    margin: 0 40vw;
+    transition: 0.7s ease-in-out;    
+    margin-top: -3vh;
 }
 
 .control-container {
     transition: 0.7s ease-in-out;    
 }
+
+
+@media (375px <= width <= 768px) {
+    .slider-container { 
+        margin: 0 7vw;
+        margin-top: -3vh;
+    }
+}
+
+ @media (820px <= width <= 1024px) {
+    .slider-container { 
+        margin: 0 25vw;
+        margin-top: -3vh;
+    }
+}
+
+
+
+@media (1180px <= width <= 1360px) {
+    .slider-container { 
+        margin: 0 37vw;
+        margin-top: -3vh;
+    }
+} 

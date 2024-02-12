@@ -37,7 +37,7 @@ const YoutubeEmbedded = () => {
 
   return (
         <div>
-            <div className="absolute top-0 right-0 pt-8 pr-10 z-50">
+            <div className="absolute top-0 right-0 pt-8 z-50">
                 <button onClick={() => handleSound()}>
                     {
                         volume > 0 ?

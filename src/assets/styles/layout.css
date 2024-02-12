@@ -4,6 +4,8 @@
     z-index: -1;
     background-size: cover;
     position:fixed;
+    background-position: center;
+    background-repeat: no-repeat;
     filter: blur(8px);
     transition: background 0.7s ease-in-out, filter 1.5s ease-in-out;
 } 
