@@ -1,6 +1,8 @@
 .youtube-container {
-    display: none;
+    opacity: 0;
+    position: absolute;
 }
+
 .icon {
     width: 7vh;
     margin-right: 2vw;

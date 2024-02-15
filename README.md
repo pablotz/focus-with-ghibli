@@ -1,5 +1,5 @@
 # Focus With Ghibli
-A pomodoro timer to focusing while you get immersive while you see and hear some art from Studio Ghibli.
+A pomodoro timer to focus and get immersive, while you see and hear some art from Studio Ghibli.
 
 
 
