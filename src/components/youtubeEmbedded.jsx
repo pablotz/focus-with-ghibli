@@ -8,10 +8,10 @@ import { useSelector } from "react-redux";
 
 const playlistsList = [
     'Sx4xVyXHl60',
-    'eWVv_rM8pEk',
-    'UJf33lZhCZc',
-    'MHb1m9pInEg',
-    'HTzRSQt7pdY'
+    '2S7Srjm4RzE',
+    '6dLWFa0UBiU',
+    'v5RHMpe7Xbs',
+    'PHklnuOvxfg'
 ]
 
 const randomPlaylist = () => {
