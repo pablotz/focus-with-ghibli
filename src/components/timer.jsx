@@ -10,6 +10,8 @@ const Timer = () => {
     useEffect(() => {
         if(isActive) {
             timerWork()
+        } else {
+            document.title = 'Focus With Ghibli'
         }
     }, [isActive]);
 

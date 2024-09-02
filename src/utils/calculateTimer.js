@@ -1,19 +1,17 @@
-import { setMinutes, setSeconds, setSelectedMinutes, toggleActive } from "../redux/slices/timerSlice";
+import { setMinutes, setSeconds, toggleActive } from "../redux/slices/timerSlice";
 import { store } from "../redux/store";
 
 let { dispatch, getState } = store;
 
 
+// This function will return how many minutes the timer will be active
 export const getDeadline = (minutes) => {
-    // The min time will be 10 minutes
-    // 10 - 10 minutes
-    // 11 - 11 minutes
-    // 12 - ...
     let date = new Date();
     date.setMinutes(date.getMinutes() + minutes);
     return date;
 }
 
+// This function will return the time that will be displayed on the timer
 export const getTime = (deadline) => {
     const { isActive } = getState().timer;
     
@@ -26,6 +24,9 @@ export const getTime = (deadline) => {
         let formattedMinutes = (minutes < 10) ? '0' + minutes : minutes;
         let formattedSeconds = (seconds < 10) ? '0' + seconds : seconds;
       
+        // Time will be displayed at page title
+        document.title = `${formattedMinutes}:${formattedSeconds} | Focus with Ghibli`;
+
         dispatch(setMinutes(formattedMinutes))
         dispatch(setSeconds(formattedSeconds));
     } else {
@@ -34,6 +35,7 @@ export const getTime = (deadline) => {
     }
 };
 
+// This function will start the timer
 export const timerWork = () => {
     const { selectedMinutes } = getState().timer;
     let deadline = getDeadline(selectedMinutes)
@@ -41,7 +43,8 @@ export const timerWork = () => {
 
     // Start an interval that will count until the timer is on 0
     const interval = setInterval(() => {
-        let time = getTime(deadline)
+        let time = getTime(deadline)        
+         
         if(time === 'finish') {
             clearInterval(interval);
         }
