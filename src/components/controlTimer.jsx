@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import '../assets/styles/button.css'
 import { timerControl } from '../utils/calculateTimer'
 import { useSelector } from 'react-redux';

@@ -71,8 +71,8 @@ const playCancel = () => {
 };
 
 export const timerControl = () => {
-    const { isActive } = getState().timer;
-    //if(selectedMinutes < 10) return;
+    const { isActive, selectedMinutes } = getState().timer;
+    if(selectedMinutes < 10) return;
     
     if(isActive){
         // Click on stop
