@@ -13,7 +13,7 @@
     transform:  translate(0, 46vh);
 }
 
-.idle-timer {
+.idle-timer {   
     transform:  translate(0);
 }
 
@@ -33,7 +33,7 @@
 }
 
 .control-container {
-    transition: 0.7s ease-in-out;    
+    transition: 0.5s ease-in-out;    
 }
 
 
