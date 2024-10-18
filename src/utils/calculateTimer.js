@@ -1,8 +1,16 @@
 import { setMinutes, setSeconds, toggleActive } from "../redux/slices/timerSlice";
 import { store } from "../redux/store";
+import cancelSound from '../assets/sounds/cancel.ogg'
+import completeSound from '../assets/sounds/completed.wav'
 
 let { dispatch, getState } = store;
 
+
+const playComplete = () => {
+    const audio = new Audio(completeSound);
+    audio.volume = 0.3
+    audio.play();
+};
 
 // This function will return how many minutes the timer will be active
 export const getDeadline = (minutes) => {
@@ -19,6 +27,7 @@ export const getTime = (deadline) => {
     let minutes = Math.floor((time / 1000 / 60) % 60);
     let seconds = Math.floor((time / 1000) % 60);
 
+    // If the timer is still active will keep updating the time
     if((minutes >= 0 || seconds >= 0) && isActive) {
         
         let formattedMinutes = (minutes < 10) ? '0' + minutes : minutes;
@@ -30,7 +39,9 @@ export const getTime = (deadline) => {
         dispatch(setMinutes(formattedMinutes))
         dispatch(setSeconds(formattedSeconds));
     } else {
+        // Once the timer is done will change the state
         isActive && dispatch(toggleActive()) 
+        playComplete()
         return 'finish';
     }
 };
@@ -53,16 +64,24 @@ export const timerWork = () => {
     return () => clearInterval(interval);
 }
 
+
+const playCancel = () => {
+    const audio = new Audio(cancelSound);
+    audio.play();
+};
+
 export const timerControl = () => {
     const { isActive, selectedMinutes } = getState().timer;
     if(selectedMinutes < 10) return;
     
     if(isActive){
+        // Click on stop
+        console.debug('[TIMER]: IS ACTIVE')
         dispatch(toggleActive())
+        playCancel()
     } else {
+        console.debug('[TIMER]: IS NOT ACTIVE')
         dispatch(toggleActive());
-        dispatch(setMinutes(0));
-        dispatch(setMinutes(0));
     }
     
 }

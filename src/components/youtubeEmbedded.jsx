@@ -1,17 +1,17 @@
 /* eslint-disable react/no-unknown-property */
 import { useEffect, useState } from "react";
-import YouTube from "react-youtube";
 import '../assets/styles/youtubeEmbeded.css'
 import ReactPlayer from 'react-player/youtube'
 import { useSelector } from "react-redux";
 
 
 const playlistsList = [
-    'Sx4xVyXHl60',
+    'R6MNlWagZhk',
     '2S7Srjm4RzE',
     '6dLWFa0UBiU',
     'v5RHMpe7Xbs',
-    'PHklnuOvxfg'
+    'PHklnuOvxfg',
+    'IbvdkEVf3Nw'
 ]
 
 const randomPlaylist = () => {
