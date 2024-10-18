@@ -28,7 +28,7 @@
 
 .slider-container { 
     margin: 0 40vw;
-    transition: 0.7s ease-in-out;    
+    transition: 0.5s ease-in-out;    
     margin-top: -3vh;
 }
 

@@ -40,8 +40,10 @@ export const getTime = (deadline) => {
         dispatch(setSeconds(formattedSeconds));
     } else {
         // Once the timer is done will change the state
-        isActive && dispatch(toggleActive()) 
-        playComplete()
+        if(isActive) {
+            dispatch(toggleActive()) 
+            playComplete()
+        }
         return 'finish';
     }
 };
