@@ -19,7 +19,6 @@ const randomPlaylist = () => {
     return `https://www.youtube.com/watch?v=${playlistsList[randomIndex]}`
 }
 
-// eslint-disable-next-line react/prop-types
 const YoutubeEmbedded = () => {
     const { minutes, seconds, isActive } = useSelector(state => state.timer);
     const [selectedVideo, setSelectedVideo] = useState(randomPlaylist());
@@ -29,15 +28,15 @@ const YoutubeEmbedded = () => {
         setIsPlaying(!isPlaying);
     }
 
-    const getNewVideo = () => {
-        let getNewVideo = randomPlaylist();
-        // Making sure get a video different than the actual
-        while (getNewVideo === selectedVideo) {
-            getNewVideo = randomPlaylist();
-        }
-        setSelectedVideo(getNewVideo)
-        setIsPlaying(true)
+const handleVideoEnd = () => {
+    let nextVideo = randomPlaylist();
+    // Making sure get a video different than the actual
+    while (nextVideo === selectedVideo) {
+        nextVideo = randomPlaylist();
     }
+    setSelectedVideo(nextVideo)
+    setIsPlaying(true)
+}
 
     useEffect(() => {
         if(
@@ -47,7 +46,7 @@ const YoutubeEmbedded = () => {
             isPlaying) {
                 setIsPlaying(false);
             }
-    }, [minutes, seconds]);
+    }, [minutes, seconds, isActive, isPlaying]);
 
   return (
         <div>
@@ -67,7 +66,7 @@ const YoutubeEmbedded = () => {
                     url={selectedVideo} 
                     playing={isPlaying}
                     volume={0.3}
-                    onEnded={() => { getNewVideo() }}
+                    onEnded={() => { handleVideoEnd() }}
                 />
             </div>
         </div>

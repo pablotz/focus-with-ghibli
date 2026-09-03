@@ -9,7 +9,7 @@ let { dispatch, getState } = store;
 const playComplete = () => {
     const audio = new Audio(completeSound);
     audio.volume = 0.3
-    audio.play();
+    audio.play().catch(() => {});
 };
 
 // This function will return how many minutes the timer will be active
@@ -19,17 +19,17 @@ export const getDeadline = (minutes) => {
     return date;
 }
 
-// This function will return the time that will be displayed on the timer
-export const getTime = (deadline) => {
+// Updates the store with the remaining time; returns true when the session is over
+const updateTimer = (deadline) => {
     const { isActive } = getState().timer;
     
     const time = Date.parse(deadline) - Date.now();
-    let minutes = Math.floor((time / 1000 / 60) % 60);
-    let seconds = Math.floor((time / 1000) % 60);
 
     // If the timer is still active will keep updating the time
-    if((minutes >= 0 || seconds >= 0) && isActive) {
+    if(time >= 0 && isActive) {
         
+        let minutes = Math.floor((time / 1000 / 60) % 60);
+        let seconds = Math.floor((time / 1000) % 60);
         let formattedMinutes = (minutes < 10) ? '0' + minutes : minutes;
         let formattedSeconds = (seconds < 10) ? '0' + seconds : seconds;
       
@@ -38,27 +38,26 @@ export const getTime = (deadline) => {
 
         dispatch(setMinutes(formattedMinutes))
         dispatch(setSeconds(formattedSeconds));
-    } else {
-        // Once the timer is done will change the state
-        if(isActive) {
-            dispatch(toggleActive()) 
-            playComplete()
-        }
-        return 'finish';
+        return false;
     }
+
+    // Once the timer is done will change the state
+    if(isActive) {
+        dispatch(toggleActive()) 
+        playComplete()
+    }
+    return true;
 };
 
 // This function will start the timer
 export const timerWork = () => {
     const { selectedMinutes } = getState().timer;
     let deadline = getDeadline(selectedMinutes)
-    getTime(deadline);
+    updateTimer(deadline);
 
     // Start an interval that will count until the timer is on 0
     const interval = setInterval(() => {
-        let time = getTime(deadline)        
-         
-        if(time === 'finish') {
+        if(updateTimer(deadline)) {
             clearInterval(interval);
         }
     }, 1000
@@ -69,7 +68,7 @@ export const timerWork = () => {
 
 const playCancel = () => {
     const audio = new Audio(cancelSound);
-    audio.play();
+    audio.play().catch(() => {});
 };
 
 export const timerControl = () => {

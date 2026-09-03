@@ -7,7 +7,7 @@ const initialState = {
   selectedMinutes: 10
 }
 
-export const timerSlice = createSlice ({
+export const timerSlice = createSlice({
   name: 'timer',
   initialState,
   reducers: {

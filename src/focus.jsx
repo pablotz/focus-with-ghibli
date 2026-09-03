@@ -11,7 +11,7 @@ const Focus = () => {
         <div className='w-full flex flex-col place-content-center place-items-center'>
           <Timer />
         </div>
-        <div className='slider-container' style={{display: isActive ? 'none' : 'block'}}>
+        <div className={`slider-container ${isActive ? 'hidden' : 'block'}`}>
           <StepSlider />
         </div>
         <div className='control-container w-full flex flex-col place-content-center place-items-center'

@@ -29,11 +29,6 @@ const StepSlider = () => {
     const { selectedMinutes } = useSelector(state => state.timer);
     const dispatch = useDispatch();
     
-
-    const handleTimerChange = (value) => {
-        dispatch(setSelectedMinutes(value))
-    }
-    
     return (
         <PrettoSlider
             value={selectedMinutes}
@@ -41,8 +36,8 @@ const StepSlider = () => {
             max={60}
             step={5}
             valueLabelDisplay="off"
-            onChange={(e) => {
-                handleTimerChange(e.target.value)
+            onChange={(_, value) => {
+                dispatch(setSelectedMinutes(value))
             }}
         />
     )
