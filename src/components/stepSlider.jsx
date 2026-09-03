@@ -36,6 +36,7 @@ const StepSlider = () => {
             max={60}
             step={5}
             valueLabelDisplay="off"
+            aria-label="Session length in minutes"
             onChange={(_, value) => {
                 dispatch(setSelectedMinutes(value))
             }}

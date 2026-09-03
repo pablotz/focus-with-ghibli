@@ -59,3 +59,12 @@
         margin-top: -3vh;
     }
 } 
+
+@media (prefers-reduced-motion: reduce) {
+    .timer-container,
+    .timer-counter,
+    .slider-container,
+    .control-container {
+        transition: none;
+    }
+} 
