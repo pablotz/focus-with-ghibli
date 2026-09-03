@@ -13,3 +13,9 @@
 .background.ghibli-background-start { 
     filter: blur(0);
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .background {
+        transition: none;
+    }
+}
