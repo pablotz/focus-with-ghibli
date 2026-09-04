@@ -7,13 +7,14 @@ export const store = configureStore({
   },
 })
 
-let lastSavedMinutes
+let lastSaved
 store.subscribe(() => {
-    const { selectedMinutes } = store.getState().timer
-    if (selectedMinutes !== lastSavedMinutes) {
-        lastSavedMinutes = selectedMinutes
+    const { selectedMinutes, musicOn, volume } = store.getState().timer
+    const current = JSON.stringify({ selectedMinutes, musicOn, volume })
+    if (current !== lastSaved) {
+        lastSaved = current
         try {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify({ selectedMinutes }))
+            localStorage.setItem(STORAGE_KEY, current)
         } catch { /* ignore storage errors */ }
     }
 })
